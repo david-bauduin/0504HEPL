@@ -1,0 +1,57 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px
+}
+
+header nav,
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#menu {
+    background-color: #ddd
+}
+
+.nav {
+    margin: 10px
+}
+
+.nav h3 {
+    color: #333
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0
+}
+
+.nav li a {
+    color: #333;
+    text-decoration: none
+}
+
+#corps {
+    margin: 20px;
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
