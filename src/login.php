@@ -1,5 +1,4 @@
 <?php
-$loggedUser = false;
 
 //step2
 //verification des données du formulaire (email + password), avec un foreach dans l'array users
@@ -11,11 +10,11 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             $user['email'] === $_POST['email'] &&
             $user['password'] === $_POST['password']
         ){
-            echo 'utilisateur connecté';
-            $loggedUser = true;
+            $_SESSION['loggedUser'] = true;
+            $_SESSION['full_name'] = $user['full_name'];
         }
     }
-    if(!$loggedUser){
+    if (!isset($_SESSION['loggedUser'])) {
         echo 'mauvais login/password';
     }
 }
@@ -24,7 +23,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 //afficher un formulaire
 ?>
 
-<?php if (!$loggedUser) : ?>
+<?php if (!isset($_SESSION['loggedUser'])) : ?>
     <form action="index.php" method="POST">
             <div>
                 <label for="email">Email</label>
@@ -36,4 +35,10 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             </div>
             <button type="submit">Envoyer</button>
        </form>
+<?php else: ?>
+        <div>
+            <p>Utilisateur Connecté</p>
+            <p><?php echo $_SESSION['full_name'] ?></p>
+            <a href="src/logout.php">Déconnexion</a>
+        </div>
 <?php endif; ?>
