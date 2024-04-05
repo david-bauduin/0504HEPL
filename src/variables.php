@@ -1,25 +1,4 @@
 <?php
-$users = [
-    [
-        'full_name' => 'Lucas Dupont',
-        'email' => 'lucas.dupont@exemple.com',
-        'age' => 34,
-        'password' => 'test',
-    ],
-    [
-        'full_name' => 'Sophie Lefevre',
-        'email' => 'sophie.lefevre@exemple.com',
-        'age' => 34,
-        'password' => 'test',
-    ],
-    [
-        'full_name' => 'Maxime Bernard',
-        'email' => 'maxime.bernard@exemple.com',
-        'age' => 28,
-        'password' => 'test',
-    ],
-];
-
 $recipes = [
     [
         'title' => 'Cassoulet',
