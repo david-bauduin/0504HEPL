@@ -18,6 +18,8 @@ $recipes = $request->fetchAll();
     <meta charset="utf-8" />
     <title>Mon site</title>
     <link href="css/style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts/script.js"></script>
 </head>
 
 <body>
@@ -30,7 +32,7 @@ $recipes = $request->fetchAll();
                 <?php require_once(__DIR__ . '/src/login.php'); ?>
             </div>
         </div>
-        
+
         <?php if (isset($_SESSION['loggedUser'])) : ?>
             <h1>Liste des recettes de cuisine</h1>
 

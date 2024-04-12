@@ -31,7 +31,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <input type="password" name="password">
         </div>
         <button type="submit">Envoyer</button>
-        <p class="message">Already registered ?<a href="#">Sign In</a></p>
+        <p class="message">Not Registered ?<a href="#">Create an account</a></p>
     </form>
 <?php else : ?>
     <div>

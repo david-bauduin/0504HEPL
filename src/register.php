@@ -31,6 +31,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['full_na
             <input type="text" name="age">
         </div>
         <button type="submit">Envoyer</button>
-        <p class="message">Not Registered ?<a href="#">Create an account</a></p>
+        <p class="message">Already registered ?<a href="#">Sign In</a></p>
+
     </form>
 <?php endif; ?>
