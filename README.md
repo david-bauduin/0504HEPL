@@ -1,3 +1,3 @@
 # 0504HEPL
 
-Cours sur les sessions/cookies
+Cours sur les sessions et cookies + BDD

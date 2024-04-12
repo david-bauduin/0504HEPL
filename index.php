@@ -19,7 +19,7 @@ require_once(__DIR__ . '/src/functions.php');
     <div id="corps">
         <?php require_once(__DIR__ . '/src/login.php'); ?>
 
-        <?php if (isset($_SESSION['loggedUser']) && $_SESSION['loggedUser']) : ?>
+        <?php if (isset($_SESSION['loggedUser'])) : ?>
             <h1>Liste des recettes de cuisine</h1>
 
             <?php foreach (getRecipes($recipes) as $recipe) : ?>
