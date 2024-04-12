@@ -1,15 +1,5 @@
 <?php
-// $loggedUser = false;
 
-//step2
-//verification des données du formulaire (email + password), avec un foreach dans l'array users
-//$loggedUser = true;
-try {
-    $client = new PDO('mysql:host=localhost;dbname=05042024', 'root');
-} catch (Exception $e) {
-    // echo $e->getMessage();
-    echo 'Il y a un problème avec la base de données';
-}
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $sql = 'SELECT * FROM `users` WHERE email=:email AND password=:password';
     $request = $client->prepare($sql);

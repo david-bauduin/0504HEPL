@@ -1,15 +1,11 @@
 <?php
 session_start();
 require_once(__DIR__ . '/src/functions.php');
+require_once(__DIR__ . '/src/config/mysql.php');
+require_once(__DIR__ . '/src/config/connect.php');
 
-try {
-    $client = new PDO('mysql:host=localhost;dbname=05042024', 'root');
-} catch (Exception $e) {
-    // echo $e->getMessage();
-    echo 'Il y a un problème avec la base de données';
-}
 
-$sql = 'SELECT * FROM recipes WHERE is_enabled=1';
+$sql = 'SELECT title, author, is_enabled FROM recipes WHERE is_enabled=1';
 $request = $client->prepare($sql);
 $request->execute();
 $recipes = $request->fetchAll();
