@@ -21,7 +21,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 ?>
 
 <?php if (!isset($_SESSION['loggedUser'])) : ?>
-    <form action="index.php" method="POST">
+    <form action="index.php" method="POST" class="login-form">
         <div>
             <label for="email">Email</label>
             <input type="email" name="email">
@@ -31,6 +31,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <input type="password" name="password">
         </div>
         <button type="submit">Envoyer</button>
+        <p class="message">Already registered ?<a href="#">Sign In</a></p>
     </form>
 <?php else : ?>
     <div>

@@ -24,8 +24,13 @@ $recipes = $request->fetchAll();
     <?php require_once(__DIR__ . '/src/partials/header.php'); ?>
 
     <div id="corps">
-        <?php require_once(__DIR__ . '/src/login.php'); ?>
-
+        <div class="login-page">
+            <div class="form">
+                <?php require_once(__DIR__ . '/src/register.php'); ?>
+                <?php require_once(__DIR__ . '/src/login.php'); ?>
+            </div>
+        </div>
+        
         <?php if (isset($_SESSION['loggedUser'])) : ?>
             <h1>Liste des recettes de cuisine</h1>
 
