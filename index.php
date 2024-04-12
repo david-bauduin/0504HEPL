@@ -5,7 +5,7 @@ require_once(__DIR__ . '/src/config/mysql.php');
 require_once(__DIR__ . '/src/config/connect.php');
 
 
-$sql = 'SELECT title, author, is_enabled FROM recipes WHERE is_enabled=1';
+$sql = 'SELECT title, recipe, author, is_enabled FROM recipes WHERE is_enabled=1';
 $request = $client->prepare($sql);
 $request->execute();
 $recipes = $request->fetchAll();
