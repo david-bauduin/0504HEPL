@@ -1,7 +1,18 @@
 <?php
 session_start();
-require_once(__DIR__ . '/src/variables.php');
 require_once(__DIR__ . '/src/functions.php');
+
+try {
+    $client = new PDO('mysql:host=localhost;dbname=05042024', 'root');
+} catch (Exception $e) {
+    // echo $e->getMessage();
+    echo 'Il y a un problème avec la base de données';
+}
+
+$sql = 'SELECT * FROM recipes WHERE is_enabled=1';
+$request = $client->prepare($sql);
+$request->execute();
+$recipes = $request->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +33,10 @@ require_once(__DIR__ . '/src/functions.php');
         <?php if (isset($_SESSION['loggedUser'])) : ?>
             <h1>Liste des recettes de cuisine</h1>
 
-            <?php foreach (getRecipes($recipes) as $recipe) : ?>
+            <?php foreach ($recipes as $recipe) : ?>
                 <article>
                     <h3><?php echo ($recipe['title']); ?></h3>
                     <div><?php echo ($recipe['recipe']); ?></div>
-                    <i><?php echo (displayAuthor($recipe['author'], $users)); ?></i>
                 </article>
             <?php endforeach; ?>
         <?php endif; ?>
