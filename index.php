@@ -5,7 +5,10 @@ require_once(__DIR__ . '/src/config/mysql.php');
 require_once(__DIR__ . '/src/config/connect.php');
 
 
-$sql = 'SELECT title, recipe, author, is_enabled FROM recipes WHERE is_enabled=1';
+$sql = 'SELECT r.title, r.recipe, u.full_name, r.is_enabled 
+FROM recipes r 
+JOIN users u ON u.id = r.user_id 
+WHERE is_enabled=1';
 $request = $client->prepare($sql);
 $request->execute();
 $recipes = $request->fetchAll();
@@ -40,6 +43,7 @@ $recipes = $request->fetchAll();
                 <article>
                     <h3><?php echo ($recipe['title']); ?></h3>
                     <div><?php echo ($recipe['recipe']); ?></div>
+                    <p><b><?php echo ($recipe['full_name']); ?></b></p>
                 </article>
             <?php endforeach; ?>
         <?php endif; ?>

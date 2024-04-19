@@ -11,6 +11,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     if ($user) {
         $_SESSION['loggedUser'] = true;
         $_SESSION['full_name'] = $user['full_name'];
+        $_SESSION['user_id'] = $user['id'];
     } else {
         echo 'mauvais login/password';
     }
