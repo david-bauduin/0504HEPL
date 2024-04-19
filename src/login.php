@@ -35,10 +35,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <button type="submit">Envoyer</button>
         <p class="message">Not Registered ?<a href="#">Create an account</a></p>
     </form>
-<?php else : ?>
-    <div>
-        <p>Utilisateur Connecté</p>
-        <p><?php echo $_SESSION['full_name']; ?></p>
-        <a href="src/logout.php">Déconnexion</a>
-    </div>
+
 <?php endif; ?>
