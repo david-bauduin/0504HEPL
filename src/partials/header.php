@@ -4,7 +4,10 @@
         <ul>
             <li><a class="active" aria-current="page" href="index.php">Home</a></li>
             <li><a class="nav-link" href="contact.php">Contact</a></li>
-            <li><a class="nav-link" href="mylist.php">Ma Liste de recettes</a></li>
+            <?php if (isset($_SESSION['loggedUser'])) : ?>
+                <li><a class="nav-link" href="mylist.php">Ma Liste de recettes</a></li>
+                <li><a class="nav-link" href="create.php">Créer une recette</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

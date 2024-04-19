@@ -37,7 +37,7 @@ $recipes = $request->fetchAll();
         </div>
 
         <?php if (isset($_SESSION['loggedUser'])) : ?>
-            <h1>Liste des recettes de cuisine</h1>
+            <h1>Ma liste de recettes de cuisine</h1>
 
             <?php foreach ($recipes as $recipe) : ?>
                 <article>

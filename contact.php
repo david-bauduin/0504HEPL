@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,20 +12,20 @@
 
 <body>
 
-<?php require_once(__DIR__ . '/src/partials/header.php');?>
+    <?php require_once(__DIR__ . '/src/partials/header.php'); ?>
 
     <div id="corps">
-       <h1>Page de Contact</h1>
-       <form>
+        <h1>Page de Contact</h1>
+        <form>
             <div>
                 <label for="email">Email</label>
                 <input type="email" name="email">
             </div>
             <button type="submit">Envoyer</button>
-       </form>
+        </form>
     </div>
 
-<?php require_once(__DIR__ . '/src/partials/footer.php');?>
+    <?php require_once(__DIR__ . '/src/partials/footer.php'); ?>
 
 </body>
 
